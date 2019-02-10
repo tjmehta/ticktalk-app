@@ -1,0 +1,9 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "TickTalk-rn/package.json"
+      ]
+    }
+  }
+}
