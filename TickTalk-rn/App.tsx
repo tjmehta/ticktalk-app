@@ -7,31 +7,12 @@
  */
 
 import React, { Component } from 'react'
-import { StyleSheet, View } from 'react-native'
 
-import Clock from './components/Clock'
+import TabScreen from '~/screens/TabScreen'
 
 type Props = {}
 export default class App extends Component<Props> {
   render() {
-    return (
-      <View style={styles.container}>
-        <Clock style={styles.clock} />
-      </View>
-    )
+    return <TabScreen />
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  clock: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-})

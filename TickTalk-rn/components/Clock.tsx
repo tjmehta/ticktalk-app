@@ -1,6 +1,8 @@
 import moment from 'moment'
 import React, { PureComponent } from 'react'
-import { StyleSheet, Text } from 'react-native'
+import { Text } from 'react-native'
+
+import { StyleProp, TextStyle } from 'react-native'
 
 type Props = {
   style: StyleProp<TextStyle>
@@ -11,7 +13,10 @@ type State = {
 }
 
 function getTimeString(): String {
-  return moment().format('h:mm A')
+  const date = moment()
+  const showColon: boolean = Boolean(date.seconds() % 2)
+  const colon = showColon ? ':' : ' '
+  return date.format(`h${colon}mm A`)
 }
 
 export default class Clock extends PureComponent<Props, State> {
@@ -19,34 +24,25 @@ export default class Clock extends PureComponent<Props, State> {
     time: getTimeString(),
   }
 
+  _animationFrameId: number | null = null
+
   componentDidMount() {
-    setInterval(this._handleInterval, 1000)
+    this._animationFrameId = requestAnimationFrame(this._handleInterval)
+  }
+
+  componentWillUnmount() {
+    if (this._animationFrameId) {
+      cancelAnimationFrame(this._animationFrameId)
+      this._animationFrameId = null
+    }
   }
 
   _handleInterval = () => {
     this.setState({ time: getTimeString() })
+    this._animationFrameId = requestAnimationFrame(this._handleInterval)
   }
 
   render() {
     return <Text style={this.props.style}>{this.state.time}</Text>
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-})
