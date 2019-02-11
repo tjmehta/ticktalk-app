@@ -1,0 +1,19 @@
+dependencies: \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Views/ScrollView/RCTScrollContentShadowView.m \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Views/ScrollView/RCTScrollContentShadowView.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Views/RCTShadowView.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Views/RCTComponent.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Views/RCTLayout.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Base/RCTRootView.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/React/Base/RCTAssert.h

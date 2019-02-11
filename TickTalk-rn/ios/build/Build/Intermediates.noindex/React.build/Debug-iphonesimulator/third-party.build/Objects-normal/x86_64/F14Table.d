@@ -1,0 +1,26 @@
+dependencies: \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/container/detail/F14Table.cpp \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/container/detail/F14Table.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Bits.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/Bits.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/ConstexprMath.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Portability.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/portability/Config.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/CPortability.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Utility.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Traits.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/Assume.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/portability/Builtins.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Likely.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/ScopeGuard.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Preprocessor.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/UncaughtExceptions.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/functional/ApplyTuple.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/functional/Invoke.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/Align.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/Exception.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/CppAttributes.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/Launder.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/SafeAssert.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/container/detail/F14Defaults.h \
+  /Users/tjmehta/Developer/@ticktalk/ticktalk-app/TickTalk-rn/node_modules/react-native/third-party/folly-2018.10.22.00/folly/container/detail/F14IntrinsicsAvailability.h
