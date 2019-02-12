@@ -1,11 +1,12 @@
 import React, { PureComponent, ReactChild } from 'react'
 import times from 'times-loop'
-import { Picker, StyleSheet, StyleProp, TextStyle } from 'react-native'
+import { Picker, StyleProp, TextStyle } from 'react-native'
 
 type PropsType = {
   initialValue: number
   maxValue: number
   minValue: number
+  onValueChange?: (selectedValue: number) => void
   style?: StyleProp<TextStyle>
   itemStyle?: StyleProp<TextStyle>
 }
@@ -24,6 +25,9 @@ export default class NumberPicker extends PureComponent<PropsType, StateType> {
 
   _handleValueChange = (selectedValue: number) => {
     this.setState({ selectedValue })
+    if (this.props.onValueChange) {
+      this.props.onValueChange(selectedValue)
+    }
   }
 
   render() {

@@ -1,16 +1,14 @@
 import React, { PureComponent } from 'react'
-import inflect from 'i'
+import inflect from 'inflection'
 import { Platform, StyleSheet, View } from 'react-native'
 
 import Clock from '~/components/Clock'
 import l10n from '~/const/l10n'
 import * as COLORS from '~/const/colors'
 
-const i = inflect()
-
 export default class ClockScreen extends PureComponent {
   static navigationOptions = {
-    title: i.titleize(l10n.clock),
+    title: inflect.capitalize(l10n.clock),
   }
 
   render() {

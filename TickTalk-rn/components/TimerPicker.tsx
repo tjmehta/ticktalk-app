@@ -1,21 +1,50 @@
-import React, { PureComponent } from 'react'
-import {
-  View,
-  StyleProp,
-  StyleSheet,
-  Text,
-  TextStyle,
-  ViewStyle,
-} from 'react-native'
+import React, { Component } from 'react'
+import { View, StyleProp, StyleSheet, Text, TextStyle } from 'react-native'
 
 import l10n from '~/const/l10n'
 import NumberPicker from '~/components/NumberPicker'
 
 type PropsType = {
   style?: StyleProp<TextStyle>
+  onValueChange?: (selectedValue: number) => void
 }
 
-export default class TimerPicker extends PureComponent<PropsType> {
+export default class TimerPicker extends Component<PropsType> {
+  _hours: number = 0
+  _minutes: number = 0
+  _seconds: number = 0
+  value: number = this._getValue()
+
+  shouldComponentUpdate() {
+    return false
+  }
+
+  _getValue(): number {
+    return (
+      this._hours * 60 * 60 * 1000 +
+      this._minutes * 60 * 1000 +
+      this._seconds * 1000
+    )
+  }
+
+  _handleHoursChange = (selectedValue: number) => {
+    this._hours = selectedValue
+    this._handleValueChange()
+  }
+  _handleMinutesChange = (selectedValue: number) => {
+    this._minutes = selectedValue
+    this._handleValueChange()
+  }
+  _handleSecondsChange = (selectedValue: number) => {
+    this._seconds = selectedValue
+    this._handleValueChange()
+  }
+  _handleValueChange() {
+    this.value = this._getValue()
+    if (!this.props.onValueChange) return
+    this.props.onValueChange(this.value)
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -56,7 +85,7 @@ export default class TimerPicker extends PureComponent<PropsType> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width: 300,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',

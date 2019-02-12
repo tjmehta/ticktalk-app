@@ -4,23 +4,23 @@ import { Text } from 'react-native'
 
 import { StyleProp, TextStyle } from 'react-native'
 
-type Props = {
+type PropsType = {
   style: StyleProp<TextStyle>
 }
 
-type State = {
-  time: String
+type StateType = {
+  time: string
 }
 
-function getTimeString(): String {
+function getTimeString(): string {
   const date = moment()
   const showColon: boolean = Boolean(date.seconds() % 2)
   const colon = showColon ? ':' : ' '
   return date.format(`h${colon}mm A`)
 }
 
-export default class Clock extends PureComponent<Props, State> {
-  state: State = {
+export default class Clock extends PureComponent<PropsType, StateType> {
+  state = {
     time: getTimeString(),
   }
 
