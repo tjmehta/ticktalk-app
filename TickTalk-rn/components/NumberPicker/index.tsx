@@ -1,52 +1,36 @@
-import React, { PureComponent, ReactChild } from 'react'
-import times from 'times-loop'
 import { Picker, StyleProp, TextStyle } from 'react-native'
+import React, { useState } from 'react'
+
+import times from 'times-loop'
 
 type PropsType = {
-  initialValue: number
+  value: number
   maxValue: number
   minValue: number
-  onValueChange?: (selectedValue: number) => void
+  onValueChange?: (value: number) => void
   style?: StyleProp<TextStyle>
   itemStyle?: StyleProp<TextStyle>
 }
 
-type StateType = {
-  selectedValue: number
-}
+export default function NumberPicker(props: PropsType) {
+  const [value, setValue] = useState<number>(props.value)
 
-export default class NumberPicker extends PureComponent<PropsType, StateType> {
-  constructor(props: PropsType) {
-    super(props)
-    this.state = {
-      selectedValue: props.initialValue,
-    }
+  function handleValueChange(value: number) {
+    setValue(value)
+    if (!props.onValueChange) return
+    props.onValueChange(value)
   }
 
-  _handleValueChange = (selectedValue: number) => {
-    this.setState({ selectedValue })
-    if (this.props.onValueChange) {
-      this.props.onValueChange(selectedValue)
-    }
-  }
-
-  render() {
-    return (
-      <Picker
-        onValueChange={this._handleValueChange}
-        selectedValue={this.state.selectedValue}
-        style={this.props.style}
-        itemStyle={this.props.itemStyle}
-      >
-        {this._renderItems()}
-      </Picker>
-    )
-  }
-
-  _renderItems(): Array<ReactChild> {
-    const { maxValue, minValue } = this.props
-    return times(maxValue - minValue + 1, (i: number) => (
-      <Picker.Item key={i} label={i.toString()} value={i} />
-    ))
-  }
+  return (
+    <Picker
+      onValueChange={handleValueChange}
+      selectedValue={value}
+      style={props.style}
+      itemStyle={props.itemStyle}
+    >
+      {times(props.maxValue - props.minValue + 1, (i: number) => (
+        <Picker.Item key={i} label={i.toString()} value={i} />
+      ))}
+    </Picker>
+  )
 }

@@ -1,86 +1,78 @@
-import React, { Component } from 'react'
-import { View, StyleProp, StyleSheet, Text, TextStyle } from 'react-native'
+import React, { Component, useState } from 'react'
+import { StyleProp, StyleSheet, Text, TextStyle, View } from 'react-native'
 
-import l10n from '~/const/l10n'
 import NumberPicker from '~/components/NumberPicker'
+import l10n from '~/const/l10n'
 
 type PropsType = {
   style?: StyleProp<TextStyle>
+  value: number
   onValueChange?: (selectedValue: number) => void
 }
 
-export default class TimerPicker extends Component<PropsType> {
-  _hours: number = 0
-  _minutes: number = 0
-  _seconds: number = 0
-  value: number = this._getValue()
+export default function TimerPicker(props: PropsType) {
+  const [hours, setHours] = useState<number>(
+    Math.floor(props.value / 60 / 60 / 1000)
+  )
+  const [minutes, setMinutes] = useState<number>(props.value % (60 * 60 * 1000))
+  const [seconds, setSeconds] = useState<number>(props.value % (60 * 1000))
 
-  shouldComponentUpdate() {
-    return false
-  }
-
-  _getValue(): number {
-    return (
-      this._hours * 60 * 60 * 1000 +
-      this._minutes * 60 * 1000 +
-      this._seconds * 1000
-    )
-  }
-
-  _handleHoursChange = (selectedValue: number) => {
-    this._hours = selectedValue
-    this._handleValueChange()
-  }
-  _handleMinutesChange = (selectedValue: number) => {
-    this._minutes = selectedValue
-    this._handleValueChange()
-  }
-  _handleSecondsChange = (selectedValue: number) => {
-    this._seconds = selectedValue
-    this._handleValueChange()
-  }
-  _handleValueChange() {
-    this.value = this._getValue()
-    if (!this.props.onValueChange) return
-    this.props.onValueChange(this.value)
+  const handleValueChange = (
+    hours: number,
+    minutes: number,
+    seconds: number
+  ) => {
+    if (!props.onValueChange) return
+    const value = hours * 60 * 60 * 1000 + minutes * 60 * 1000 + seconds * 1000
+    props.onValueChange(value)
   }
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.input}>
-          <NumberPicker
-            style={[styles.picker, this.props.style]}
-            itemStyle={this.props.style}
-            minValue={0}
-            maxValue={23}
-            initialValue={0}
-          />
-          <Text style={[styles.text, this.props.style]}>{l10n.hours}</Text>
-        </View>
-        <View style={styles.input}>
-          <NumberPicker
-            style={[styles.picker, this.props.style]}
-            itemStyle={this.props.style}
-            minValue={0}
-            maxValue={60}
-            initialValue={0}
-          />
-          <Text style={[styles.text, this.props.style]}>{l10n.min}</Text>
-        </View>
-        <View style={styles.input}>
-          <NumberPicker
-            style={[styles.picker, this.props.style]}
-            itemStyle={this.props.style}
-            minValue={0}
-            maxValue={60}
-            initialValue={0}
-          />
-          <Text style={[styles.text, this.props.style]}>{l10n.sec}</Text>
-        </View>
+  return (
+    <View style={styles.container}>
+      <View style={styles.input}>
+        <NumberPicker
+          style={[styles.picker, props.style]}
+          itemStyle={props.style}
+          minValue={0}
+          maxValue={23}
+          onValueChange={hours => {
+            setHours(hours)
+            handleValueChange(hours, minutes, seconds)
+          }}
+          value={hours}
+        />
+        <Text style={[styles.text, props.style]}>{l10n.hours}</Text>
       </View>
-    )
-  }
+      <View style={styles.input}>
+        <NumberPicker
+          style={[styles.picker, props.style]}
+          itemStyle={props.style}
+          minValue={0}
+          maxValue={60}
+          onValueChange={minutes => {
+            setMinutes(minutes)
+            handleValueChange(hours, minutes, seconds)
+          }}
+          value={minutes}
+        />
+        <Text style={[styles.text, props.style]}>{l10n.min}</Text>
+      </View>
+      <View style={styles.input}>
+        <NumberPicker
+          style={[styles.picker, props.style]}
+          itemStyle={props.style}
+          minValue={0}
+          maxValue={60}
+          onValueChange={seconds => {
+            setSeconds(seconds)
+            handleValueChange(hours, minutes, seconds)
+          }}
+          value={seconds}
+        />
+        <Text style={[styles.text, props.style]}>{l10n.sec}</Text>
+      </View>
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({

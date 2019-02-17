@@ -18,7 +18,9 @@ module.exports = {
           '.ios.tsx',
         ],
         root: ['.'],
-        alias: { '~': './' },
+        alias: {
+          '~': './',
+        },
       },
     ],
   ],
