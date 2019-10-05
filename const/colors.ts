@@ -1,0 +1,13 @@
+export const BLACK = '#050C00'
+export const WHITE = '#FFFFFF'
+export const DM_WHITE = '#A0A0A0'
+export const YELLOW = '#FF0000'
+export const DK_GREY = '#242424'
+
+export const BTN_DK_GREY = '#242424'
+export const BTN_DK_ORANGE = '#3B2302'
+export const BTN_GREEN = '#18351E'
+export const BTN_GREY = '#3A3A3A'
+export const TXT_GREY = '#7C7C7F'
+export const TXT_LT_GREEN = '#74BF80'
+export const TXT_ORANGE = '#FF9601'
